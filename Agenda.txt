@@ -1,0 +1,37 @@
+
+
+1. Devlop code logic for Markup within Svelte with no dependency
+
+>>
+
+
+
+
+
+
+
+2. With SQLite and dynamic 3 D3.js
+
+>>
+
+Whenever I .map I get Limit error 
+
+3. Notes:
+
+https://github.com/WiseLibs/better-sqlite3/blob/master/docs/api.md
+
+fast-json-stringify is significantly faster than JSON.stringify() for small payloads https://www.npmjs.com/package/fast-json-stringify
+
+ https://www.npmjs.com/package/flatstr for "string concatenation and then writing that string somewhere"
+
+ "Query parameters are a part of a URL that comes after a question mark " 
+  >> https://www.okupter.com/blog/sveltekit-query-parameters
+  >> https://stackoverflow.com/questions/71379031/how-do-get-query-string-parameter-in-sveltekit
+  >> https://www.programonaut.com/how-to-change-url-query-parameters-without-reload-sveltekit/
+
+4. Video Notes
+
+>> SvelteKit 1.0 with SQLite Tutorial - For Search 
+
+Filter Elements w/ Menu and Search Input
+https://svelte.dev/repl/e67e1a90ef3945ec988bf39f6a10b6b3?version=3.32.3
