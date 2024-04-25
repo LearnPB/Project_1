@@ -5,7 +5,7 @@
 <a href="/blog"> Blog </a>
 <a href="/"> Home </a>
 
-<table class="container">
+<!-- <table class="container">
 	<thead>
 		<tr>
 			<th>Player Name</th>
@@ -21,21 +21,21 @@
 		{/each}
 	</tbody>
 </table>
+-->
 
 <h1 class="text-3xl font-bold underline">Top players</h1>
 <ul>
-	{#each data.summaries as { slug, title }}
+	{#each data.players as Player}
 		<li>
-			<a href="/toplayer/{slug}">
-				{title}
+			<a href="/toplayer/{Player.PlayerName}">
+				{Player.PlayerName}
 			</a>
 		</li>
 	{/each}
 </ul>
+<pre>{JSON.stringify(data.players, null, 2)}</pre>
 
-<pre>{JSON.stringify(data, null, 2)}</pre>
-
-<style>
+<!-- <style>
 	.container {
 		min-width: 300px; /* Minimum width of the container */
 		max-width: 800px; /* Maximum width of the container */
@@ -73,4 +73,4 @@
 		transition: transform 0.3s ease-in-out; /* This will animate the change */
 		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* This will add a shadow around the row */
 	}
-</style>
+</style> -->

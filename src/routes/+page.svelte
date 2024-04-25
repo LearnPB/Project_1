@@ -44,7 +44,7 @@
 </script>
 
 <a href="/blog"> Blog </a>
-<a href="/Toplayer"> Top Player </a>
+<a href="/toplayer"> Top Player </a>
 
 <input
 	type="search"
