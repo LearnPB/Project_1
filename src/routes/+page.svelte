@@ -35,7 +35,7 @@
 
 			searchTerm = target.value;
 			safeFetchPlayers();
-		}, 500);
+		}, 300);
 	}
 
 	//console.log(data.players);
