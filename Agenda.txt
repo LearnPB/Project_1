@@ -35,3 +35,12 @@ fast-json-stringify is significantly faster than JSON.stringify() for small payl
 
 Filter Elements w/ Menu and Search Input
 https://svelte.dev/repl/e67e1a90ef3945ec988bf39f6a10b6b3?version=3.32.3
+
+Combobox:
+
+https://svelte.dev/repl/5734f123973d4682978427024ca90850?version=3.29.0
+https://svelte.dev/repl/144f22d18c6943abb1fdd00f13e23fde?version=3.49.0
+https://blog.reactivesearch.io/search-ui-with-svelte-and-elasticsearch
+https://svelecte.vercel.app/
+
+https://svelte.dev/repl/514f1335749a4eae9d34ad74dc277f20?version=3.37.0

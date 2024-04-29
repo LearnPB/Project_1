@@ -1,10 +1,20 @@
 <script>
+	import Accordion from '$lib/components/Accordion.svelte';
 	export let data; // Data received from the route (optional)
 
 	/**
-	 * @type {string | number | NodeJS.Timeout | undefined}
+	 * @type {NodeJS.Timeout}
 	 */
+	// Variable to hold the timer for the search delay
 	let timer;
+
+	/**
+	 * The searchTerm is the term that the user is searching for. It's initialized as an
+	 * empty string, and it will be updated every time the user types something in the
+	 * search input
+	 * @type {string}
+	 */
+
 	let searchTerm = '';
 
 	/**
@@ -14,18 +24,23 @@
 		fetch(`/api/searchPlayer?searchTerm=${searchTerm}`)
 			.then((res) => res.json())
 			.then((data) => {
+				//Set the tracks to the data received from the API
 				tracks = data;
 				//console.log(data.players); // data shows in console
 			});
 	}
 
 	/**
-	 * Safely handle search, logging any exceptions that occur
+	 * This function handles the search input's keyup event. It clears the timer if it exists,
+	 * creates a new timer that will call safeFetchPlayers after a delay of 300ms, and sets
+	 * the searchTerm to the value of the search input.
+	 * It logs any exceptions that occur.
 	 * @param {Event} e - event
 	 */
+
 	function safeHandleSearch(e) {
 		clearTimeout(timer);
-
+		// Create a new timer that will call safeFetchPlayers after a delay of 300ms
 		timer = setTimeout(() => {
 			const target = e.target;
 			if (!(target instanceof HTMLInputElement)) {
@@ -33,9 +48,10 @@
 				return;
 			}
 
+			// Set the searchTerm to the value of the search input
 			searchTerm = target.value;
 			safeFetchPlayers();
-		}, 500);
+		}, 300);
 	}
 
 	//console.log(data.players);
@@ -76,6 +92,11 @@
 		</tbody>
 	</table>
 </div>
+
+<div>
+	<Accordion />
+</div>
+
 <pre>{JSON.stringify(tracks, null, 2)}</pre>
 
 <style>
