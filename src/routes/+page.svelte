@@ -1,5 +1,5 @@
 <script>
-	import Accordion from '$lib/components/Accordion.svelte';
+	//import Accordion from '$lib/components/Accordion.svelte';
 	export let data; // Data received from the route (optional)
 
 	/**
@@ -51,7 +51,7 @@
 			// Set the searchTerm to the value of the search input
 			searchTerm = target.value;
 			safeFetchPlayers();
-		}, 300);
+		}, 500);
 	}
 
 	//console.log(data.players);
@@ -91,10 +91,6 @@
 			{/each}
 		</tbody>
 	</table>
-</div>
-
-<div>
-	<Accordion />
 </div>
 
 <pre>{JSON.stringify(tracks, null, 2)}</pre>
