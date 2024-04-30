@@ -5,16 +5,11 @@
 >>
 
 
-
-
-
-
-
 2. With SQLite and dynamic 3 D3.js
 
 >>
 
-Whenever I .map I get Limit error 
+https://observablehq.com/@d3/d3-group
 
 3. Notes:
 
