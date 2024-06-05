@@ -23,11 +23,13 @@
 </table>
 -->
 
+<!-- src/routes/topPlayers.svelte -->
+
 <h1 class="text-3xl font-bold underline">Top players</h1>
 <ul>
 	{#each data.players as Player}
 		<li>
-			<a href="/toplayer/{Player.PlayerName}">
+			<a href={`/toplayer/${Player.PlayerName.replace(/ /g, '_').toLowerCase()}`}>
 				{Player.PlayerName}
 			</a>
 		</li>
