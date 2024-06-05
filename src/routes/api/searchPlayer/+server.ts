@@ -7,7 +7,8 @@ export const GET = (({ url }) => {
 
   let players: Player[] = [];
 
-  if (!searchTerm) {
+
+  if (!searchTerm || searchTerm.length < 3) {
     players = topPlayer();
   }
 

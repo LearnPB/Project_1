@@ -1,4 +1,4 @@
-export const TopPlayersPay = `
+export const TOP_PLAYERS_PAY = `
     SELECT 
     Name_ID, name AS PlayerName,
       CAST(REPLACE(SUBSTRING(TotalPay, 2), ',', '') AS INTEGER) AS CleanTotalPay
@@ -8,17 +8,19 @@ export const TopPlayersPay = `
       CleanTotalPay DESC
     LIMIT ?` // Using ? as a placeholder and not '$LIMIT' or 10 is to avoid SQL injection or make dynamic
 
-export const SQL_Player = `SELECT Name_ID,Name, TotalPay, Nation
-FROM alldata
-where Name_ID = $name_id` // Both $Name_ID or ? wont allow SQL injection 
+export const SQL_PLAYER = `SELECT Name_ID, Name, TotalPay, Nation
+    FROM alldata
+    WHERE Name_ID = $name_id`;// Both $Name_ID or ? wont allow SQL injection 
 
-export const searchPlayerName = `
+export const SEARCH_PLAYER_NAME = `
     SELECT 
-    Name_ID, name AS PlayerName,
+      Name_ID, 
+      name AS PlayerName,
       CAST(REPLACE(SUBSTRING(TotalPay, 2), ',', '') AS INTEGER) AS CleanTotalPay
     FROM 
       alldata
-      where lower(name) like lower('%' || $searchTerm || '%')
-      ORDER BY 
+    WHERE 
+      lower(name) LIKE '%' || lower($searchTerm) || '%'
+    ORDER BY 
       CleanTotalPay DESC
-    LIMIT 10` // Using ? as a placeholder and not '$LIMIT' or 10 is to avoid SQL injection or make dynamic
+    LIMIT $limit`; // Using ? as a placeholder and not '$LIMIT' or 10 is to avoid SQL injection or make dynamic
